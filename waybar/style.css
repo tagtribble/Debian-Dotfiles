@@ -1,0 +1,73 @@
+/* Reset and Bar Background */
+* {
+    font-family: "Inter", "Font Awesome 6 Free", sans-serif;
+    font-size: 14px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+/* Generic Module Styling */
+#network,
+#workspaces button,
+#taskbar button,
+#battery,
+#power-profiles-daemon,
+#clock {
+    border: 2px solid transparent;
+    padding: 0px 15px;
+    margin: 4px 2px;
+    color: #ffffff;
+    border-radius: 20px; /* Curved edges */
+    transition: background-color 0.25s ease;
+}
+
+/* Hover Effect: 50% Opacity Background */
+#network:hover,
+#taskbar button:hover,
+#battery:hover,
+#power-profiles-daemon:hover,
+#clock:hover {
+    background: none;
+    border-color: #ffffff; 
+    color: #ffffff; /* Darker text on light hover for readability */
+}
+
+/* Specific Workspace Styling */
+#workspaces button {
+    padding: 0 5px;
+    background: none;
+    color: #ffffff;
+}
+
+#workspaces button.focused {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#workspaces button:hover {
+    border-color: #ffffff; /* Let the container handle the hover */
+    box-shadow: none;
+    text-shadow: none;
+}
+
+/* Taskbar icon sizing */
+#taskbar button {
+    padding: 0 20px;
+}
+
+#custom-cava {
+    padding: 0 15px;
+    border-radius: 20px; /* Curved edges */
+    transition: background-color 0.25s ease;
+    margin-top: -10px;
+    font-size: 30px;
+}
+
+#workspaces {
+    margin-left: 10px;
+}

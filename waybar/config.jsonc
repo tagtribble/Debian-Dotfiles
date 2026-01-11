@@ -1,0 +1,60 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 28,
+    "spacing": 4,
+    "modules-left": ["sway/workspaces", "wlr/taskbar"],
+    "modules-center": ["custom/cava"],
+    "modules-right": ["battery", "power-profiles-daemon", "network", "clock"],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "on-click": "activate"
+    },
+    "custom/cava": {
+        "format": "{}",
+        "exec": "bash ~/.config/waybar/cava.sh",
+        "return-type": "text",
+        "on-click": "pkill -USR1 cava",
+        "rotate": 180
+    },
+
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+
+    "network": {
+        "interface": "wlp0s20f3",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-connected": "{essid} {icon}",
+        "format-disconnected": "No Connection {icon}",
+        "format-icons": {
+            "connected": "",
+            "disconnected": ""
+        },
+        "tooltip": true,
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "on-click": "kitty -e nmtui"
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    }
+}
